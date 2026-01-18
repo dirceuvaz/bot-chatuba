@@ -19,7 +19,7 @@ COPY requirements.txt .
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-# Ensure static-ffmpeg doesn't try to download binaries since we installed system ffmpeg, 
+# Ensure static-ffmpeg doesn't try to download binaries since we installed system ffmpeg,
 # though the code might still run add_paths, it should ideally verify.
 # installing static-ffmpeg just in case the code depends on the module import.
 RUN pip install static-ffmpeg

@@ -38,7 +38,26 @@ class CommunityBot(commands.Bot):
         logger.info(f'Logado como {self.user} (ID: {self.user.id})')
         logger.info('------')
 
+
+# Health Check Server for Back4App/PaaS
+from aiohttp import web
+
+async def health_check(request):
+    return web.Response(text="I'm alive!")
+
+async def start_health_server():
+    app = web.Application()
+    app.router.add_get('/', health_check)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, '0.0.0.0', 8080)
+    await site.start()
+    logger.info("Health check server running on port 8080")
+
 async def main():
+    # Start health check server
+    await start_health_server()
+
     async with CommunityBot() as bot:
         if not DISCORD_TOKEN:
              logger.error("DISCORD_TOKEN não encontrado nas variáveis de ambiente.")
@@ -49,5 +68,4 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        # Handle Ctrl+C allowing for graceful shutdown
         pass
