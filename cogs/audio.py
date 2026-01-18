@@ -16,14 +16,9 @@ ytdl_format_options = {
     'no_warnings': True,
     'default_search': 'auto',
     'source_address': '0.0.0.0',
-    # Bypass "Sign in to confirm you’re not a bot" - STRATEGY 2: TV EMBEDDED
-    # This mimics a Smart TV which usually has no login capability, bypassing the check.
-    'extractor_args': {
-        'youtube': {
-            'player_client': ['tv_embedded', 'web_embedded'],
-            'player_skip': ['webpage', 'js-interp', 'config']
-        }
-    }
+    # USE COOKIES TO BYPASS "Sign in to confirm you’re not a bot"
+    # The 'cookies.txt' file must be in the same folder as main.py
+    'cookiefile': 'cookies.txt' 
 }
 
 ffmpeg_options = {
