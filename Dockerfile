@@ -30,5 +30,8 @@ COPY . .
 # Define environment variable
 ENV PYTHONUNBUFFERED=1
 
+# Expose port for health check
+EXPOSE 8080
+
 # Run the bot
 CMD ["python", "main.py"]

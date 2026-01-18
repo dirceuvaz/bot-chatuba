@@ -53,6 +53,16 @@ async def start_health_server():
     site = web.TCPSite(runner, '0.0.0.0', 8080)
     await site.start()
     logger.info("Health check server running on port 8080")
+    print(r"""
+   ______  __  __   ___   _____  __  __  ____    ___ 
+  / ____/ / / / /  /   | /_  __/ / / / / / __ )  /   |
+ / /     / /_/ /  / /| |  / /   / / / / / __  | / /| |
+/ /___  / __  /  / ___ | / /   / /_/ / / /_/ / / ___ |
+\____/ /_/ /_/  /_/  |_|/_/    \____/ /_____/ /_/  |_|
+                                                      
+   >>> BOT INICIADO COM SUCESSO! <<<
+   >>> Servidor de Health Check: Porta 8080 <<<
+    """)
 
 async def main():
     # Start health check server
