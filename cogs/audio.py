@@ -5,7 +5,7 @@ import yt_dlp
 
 # YouTubeDL format options
 ytdl_format_options = {
-    'format': 'bestaudio/best',
+    'format': 'bestaudio',
     'outtmpl': '%(extractor)s-%(id)s-%(title)s.%(ext)s',
     'restrictfilenames': True,
     'noplaylist': False,
