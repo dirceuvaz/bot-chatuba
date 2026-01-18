@@ -4,10 +4,6 @@ import logging
 from config import DISCORD_TOKEN
 import discord
 from discord.ext import commands
-import static_ffmpeg
-
-# Configura o ffmpeg automaticamente
-static_ffmpeg.add_paths()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
