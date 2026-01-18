@@ -1,9 +1,3 @@
-# COLE AQUI O CONTEUDO DO SEU ARQUIVO DE COOKIES
-# RECOMENDADO: Use a extensão "Get cookies.txt LOCALLY" no Chrome/Firefox
-# 1. Instale a extensão
-# 2. Vá para o YouTube (logado na sua conta)
-# 3. Clique na extensão e baixe o arquivo
-# 4. Abra o arquivo, copie TUDO e cole aqui substituindo este texto.
 # Netscape HTTP Cookie File
 # https://curl.haxx.se/rfc/cookie_spec.html
 # This is a generated file! Do not edit.
