@@ -5,7 +5,7 @@ import yt_dlp
 
 # YouTubeDL format options
 ytdl_format_options = {
-    'format': 'bestaudio',
+    'format': 'bestaudio/best',
     'outtmpl': '%(extractor)s-%(id)s-%(title)s.%(ext)s',
     'restrictfilenames': True,
     'noplaylist': False,
@@ -16,14 +16,20 @@ ytdl_format_options = {
     'no_warnings': True,
     'default_search': 'auto',
     'source_address': '0.0.0.0',
-    # USE COOKIES TO BYPASS "Sign in to confirm you’re not a bot"
-    # The 'cookies.txt' file must be in the same folder as main.py
+    # "Creative" Solution: iOS Client is currently the most robust for bots
+    # It mimics an iPhone, which YouTube trusts more than generic web clients.
+    'extractor_args': {
+        'youtube': {
+            'player_client': ['ios']
+        }
+    },
     'cookiefile': 'cookies.txt' 
 }
 
 ffmpeg_options = {
     'options': '-vn',
-    'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5' # Ajuda a manter a conexão estável
+    # Robust reconnection options used by most major bots
+    'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5'
 }
 
 ytdl = yt_dlp.YoutubeDL(ytdl_format_options)
